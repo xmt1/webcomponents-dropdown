@@ -1,0 +1,116 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<script src="https://unpkg.com/web-animations-js@^2.0.0/web-animations-next-lite.min.js"></script>
+
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+
+
+
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="frayer-model-app">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      .top-nav {
+        height: 42px;
+        background-color: #522398;
+      }
+      
+      .sub-nav {
+        height: 64px;
+        background-color: #673AB7;
+      }
+      
+      main {
+        margin-top: 30px;
+      }
+
+      .Info p {
+        color: #673AB7;
+        line-height: 2;
+      }
+
+      paper-dropdown-menu {
+        
+          --paper-dropdown-menu: {
+            width: 100%;
+            background-color: #673AB7;
+            border-radius: 4px;
+            color: #fff;
+        };
+        --paper-input-container-color: rgb(255, 255, 255, .87);
+        --paper-input-container-label: {
+          visibility: hidden;
+          padding: 0;
+          height: 0;
+        };
+        --paper-input-container: {
+          padding: 15px 24px;
+        };
+
+        --paper-input-container-input: {
+          color: #fff;
+        }
+        
+        --paper-dropdown-menu-ripple: {
+          height: 100%;
+          top: 0 !important;
+          left: 0;
+        };
+        --paper-input-container-underline: {
+          display: none;
+        };
+        --paper-input-container-underline-focus: {
+          display: none;
+        };
+        --paper-input-container-underline-disabled: {
+          display: none;
+        };
+      }
+
+      paper-input {
+        border: 2px solid red;
+      }
+      
+
+    </style>
+    <header>
+      <nav class="top-nav"></nav>
+      <nav class="sub-nav"></nav>
+    </header>
+    <main class="container">
+      <section class="Info">
+        <p>Match the correct word to the <strong>Frayer Model</strong> by selecting one of the options from the dropdown menu below.</p>
+        <paper-dropdown-menu label="Select an Answer" placeholder="Select an Answer" no-label-float>
+          <paper-listbox slot="dropdown-content" class="dropdown-content">
+            <paper-item>allosaurus</paper-item>
+            <paper-item>brontosaurus</paper-item>
+            <paper-item>carcharodontosaurus</paper-item>
+            <paper-item>diplodocus</paper-item>
+          </paper-listbox>
+        </paper-dropdown-menu>
+      </section>
+    </main>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class FrayerModelApp extends Polymer.Element {
+      static get is() { return 'frayer-model-app'; }
+      static get properties() {
+        return {};
+      }
+    }
+
+    window.customElements.define(FrayerModelApp.is, FrayerModelApp);
+  </script>
+</dom-module>
